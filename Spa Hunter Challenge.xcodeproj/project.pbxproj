@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F91BFE41A0AE15400FF6A65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE31A0AE15400FF6A65 /* main.m */; };
+		4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */; };
+		4F91BFEA1A0AE15400FF6A65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE91A0AE15400FF6A65 /* ViewController.m */; };
+		4F91BFED1A0AE15400FF6A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */; };
+		4F91BFEF1A0AE15400FF6A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */; };
+		4F91BFF21A0AE15400FF6A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */; };
+		4F91BFFE1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F91BFF81A0AE15500FF6A65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F91BFD61A0AE15400FF6A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F91BFDD1A0AE15400FF6A65;
+			remoteInfo = "Spa Hunter Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F91BFDE1A0AE15400FF6A65 /* Spa Hunter Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spa Hunter Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F91BFE21A0AE15400FF6A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F91BFE31A0AE15400FF6A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F91BFE51A0AE15400FF6A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F91BFE81A0AE15400FF6A65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4F91BFE91A0AE15400FF6A65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4F91BFEC1A0AE15400FF6A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4F91BFF11A0AE15400FF6A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4F91BFF71A0AE15400FF6A65 /* Spa Hunter ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spa Hunter ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F91BFFC1A0AE15500FF6A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Spa_Hunter_ChallengeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F91BFDB1A0AE15400FF6A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F91BFF41A0AE15400FF6A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F91BFD51A0AE15400FF6A65 = {
+			isa = PBXGroup;
+			children = (
+				4F91BFE01A0AE15400FF6A65 /* Spa Hunter Challenge */,
+				4F91BFFA1A0AE15500FF6A65 /* Spa Hunter ChallengeTests */,
+				4F91BFDF1A0AE15400FF6A65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F91BFDF1A0AE15400FF6A65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F91BFDE1A0AE15400FF6A65 /* Spa Hunter Challenge.app */,
+				4F91BFF71A0AE15400FF6A65 /* Spa Hunter ChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F91BFE01A0AE15400FF6A65 /* Spa Hunter Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				4F91BFE51A0AE15400FF6A65 /* AppDelegate.h */,
+				4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */,
+				4F91BFE81A0AE15400FF6A65 /* ViewController.h */,
+				4F91BFE91A0AE15400FF6A65 /* ViewController.m */,
+				4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */,
+				4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */,
+				4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */,
+				4F91BFE11A0AE15400FF6A65 /* Supporting Files */,
+			);
+			path = "Spa Hunter Challenge";
+			sourceTree = "<group>";
+		};
+		4F91BFE11A0AE15400FF6A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F91BFE21A0AE15400FF6A65 /* Info.plist */,
+				4F91BFE31A0AE15400FF6A65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F91BFFA1A0AE15500FF6A65 /* Spa Hunter ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */,
+				4F91BFFB1A0AE15500FF6A65 /* Supporting Files */,
+			);
+			path = "Spa Hunter ChallengeTests";
+			sourceTree = "<group>";
+		};
+		4F91BFFB1A0AE15500FF6A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F91BFFC1A0AE15500FF6A65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F91BFDD1A0AE15400FF6A65 /* Spa Hunter Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F91C0011A0AE15500FF6A65 /* Build configuration list for PBXNativeTarget "Spa Hunter Challenge" */;
+			buildPhases = (
+				4F91BFDA1A0AE15400FF6A65 /* Sources */,
+				4F91BFDB1A0AE15400FF6A65 /* Frameworks */,
+				4F91BFDC1A0AE15400FF6A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spa Hunter Challenge";
+			productName = "Spa Hunter Challenge";
+			productReference = 4F91BFDE1A0AE15400FF6A65 /* Spa Hunter Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F91BFF61A0AE15400FF6A65 /* Spa Hunter ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F91C0041A0AE15500FF6A65 /* Build configuration list for PBXNativeTarget "Spa Hunter ChallengeTests" */;
+			buildPhases = (
+				4F91BFF31A0AE15400FF6A65 /* Sources */,
+				4F91BFF41A0AE15400FF6A65 /* Frameworks */,
+				4F91BFF51A0AE15400FF6A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F91BFF91A0AE15500FF6A65 /* PBXTargetDependency */,
+			);
+			name = "Spa Hunter ChallengeTests";
+			productName = "Spa Hunter ChallengeTests";
+			productReference = 4F91BFF71A0AE15400FF6A65 /* Spa Hunter ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F91BFD61A0AE15400FF6A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Christina Gunarto";
+				TargetAttributes = {
+					4F91BFDD1A0AE15400FF6A65 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					4F91BFF61A0AE15400FF6A65 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 4F91BFDD1A0AE15400FF6A65;
+					};
+				};
+			};
+			buildConfigurationList = 4F91BFD91A0AE15400FF6A65 /* Build configuration list for PBXProject "Spa Hunter Challenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F91BFD51A0AE15400FF6A65;
+			productRefGroup = 4F91BFDF1A0AE15400FF6A65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F91BFDD1A0AE15400FF6A65 /* Spa Hunter Challenge */,
+				4F91BFF61A0AE15400FF6A65 /* Spa Hunter ChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F91BFDC1A0AE15400FF6A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F91BFED1A0AE15400FF6A65 /* Main.storyboard in Resources */,
+				4F91BFF21A0AE15400FF6A65 /* LaunchScreen.xib in Resources */,
+				4F91BFEF1A0AE15400FF6A65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F91BFF51A0AE15400FF6A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F91BFDA1A0AE15400FF6A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F91BFEA1A0AE15400FF6A65 /* ViewController.m in Sources */,
+				4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */,
+				4F91BFE41A0AE15400FF6A65 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F91BFF31A0AE15400FF6A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F91BFFE1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F91BFF91A0AE15500FF6A65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F91BFDD1A0AE15400FF6A65 /* Spa Hunter Challenge */;
+			targetProxy = 4F91BFF81A0AE15500FF6A65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F91BFEC1A0AE15400FF6A65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F91BFF11A0AE15400FF6A65 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F91BFFF1A0AE15500FF6A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4F91C0001A0AE15500FF6A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F91C0021A0AE15500FF6A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Spa Hunter Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F91C0031A0AE15500FF6A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Spa Hunter Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4F91C0051A0AE15500FF6A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Spa Hunter ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spa Hunter Challenge.app/Spa Hunter Challenge";
+			};
+			name = Debug;
+		};
+		4F91C0061A0AE15500FF6A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Spa Hunter ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spa Hunter Challenge.app/Spa Hunter Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F91BFD91A0AE15400FF6A65 /* Build configuration list for PBXProject "Spa Hunter Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F91BFFF1A0AE15500FF6A65 /* Debug */,
+				4F91C0001A0AE15500FF6A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F91C0011A0AE15500FF6A65 /* Build configuration list for PBXNativeTarget "Spa Hunter Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F91C0021A0AE15500FF6A65 /* Debug */,
+				4F91C0031A0AE15500FF6A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4F91C0041A0AE15500FF6A65 /* Build configuration list for PBXNativeTarget "Spa Hunter ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F91C0051A0AE15500FF6A65 /* Debug */,
+				4F91C0061A0AE15500FF6A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F91BFD61A0AE15400FF6A65 /* Project object */;
+}
