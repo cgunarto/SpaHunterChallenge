@@ -1,0 +1,13 @@
+//
+//  SpaMKMapItem.m
+//  Spa Hunter Challenge
+//
+//  Created by CHRISTINA GUNARTO on 11/5/14.
+//  Copyright (c) 2014 Christina Gunarto. All rights reserved.
+//
+
+#import "SpaMKMapItem.h"
+
+@implementation SpaMKMapItem
+
+@end

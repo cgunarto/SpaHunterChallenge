@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		4F91BFE41A0AE15400FF6A65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE31A0AE15400FF6A65 /* main.m */; };
 		4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */; };
-		4F91BFEA1A0AE15400FF6A65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE91A0AE15400FF6A65 /* ViewController.m */; };
+		4F91BFEA1A0AE15400FF6A65 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFE91A0AE15400FF6A65 /* RootViewController.m */; };
 		4F91BFED1A0AE15400FF6A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */; };
 		4F91BFEF1A0AE15400FF6A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */; };
 		4F91BFF21A0AE15400FF6A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */; };
 		4F91BFFE1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */; };
+		4F91C0091A0AE73D00FF6A65 /* Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C0081A0AE73D00FF6A65 /* Spa.m */; };
+		4F91C00C1A0AE76600FF6A65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */; };
+		4F91C00F1A0AF9F000FF6A65 /* SpaMKMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C00E1A0AF9F000FF6A65 /* SpaMKMapItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,19 @@
 		4F91BFE31A0AE15400FF6A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F91BFE51A0AE15400FF6A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4F91BFE81A0AE15400FF6A65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4F91BFE91A0AE15400FF6A65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4F91BFE81A0AE15400FF6A65 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		4F91BFE91A0AE15400FF6A65 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4F91BFEC1A0AE15400FF6A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F91BFF11A0AE15400FF6A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4F91BFF71A0AE15400FF6A65 /* Spa Hunter ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spa Hunter ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F91BFFC1A0AE15500FF6A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Spa_Hunter_ChallengeTests.m; sourceTree = "<group>"; };
+		4F91C0071A0AE73D00FF6A65 /* Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spa.h; sourceTree = "<group>"; };
+		4F91C0081A0AE73D00FF6A65 /* Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spa.m; sourceTree = "<group>"; };
+		4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4F91C00D1A0AF9F000FF6A65 /* SpaMKMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaMKMapItem.h; sourceTree = "<group>"; };
+		4F91C00E1A0AF9F000FF6A65 /* SpaMKMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaMKMapItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F91C00C1A0AE76600FF6A65 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 		4F91BFD51A0AE15400FF6A65 = {
 			isa = PBXGroup;
 			children = (
+				4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */,
 				4F91BFE01A0AE15400FF6A65 /* Spa Hunter Challenge */,
 				4F91BFFA1A0AE15500FF6A65 /* Spa Hunter ChallengeTests */,
 				4F91BFDF1A0AE15400FF6A65 /* Products */,
@@ -83,8 +93,9 @@
 			children = (
 				4F91BFE51A0AE15400FF6A65 /* AppDelegate.h */,
 				4F91BFE61A0AE15400FF6A65 /* AppDelegate.m */,
-				4F91BFE81A0AE15400FF6A65 /* ViewController.h */,
-				4F91BFE91A0AE15400FF6A65 /* ViewController.m */,
+				4F91C00A1A0AE74000FF6A65 /* Model */,
+				4F91BFE81A0AE15400FF6A65 /* RootViewController.h */,
+				4F91BFE91A0AE15400FF6A65 /* RootViewController.m */,
 				4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */,
 				4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */,
 				4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */,
@@ -117,6 +128,17 @@
 				4F91BFFC1A0AE15500FF6A65 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F91C00A1A0AE74000FF6A65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F91C0071A0AE73D00FF6A65 /* Spa.h */,
+				4F91C0081A0AE73D00FF6A65 /* Spa.m */,
+				4F91C00D1A0AF9F000FF6A65 /* SpaMKMapItem.h */,
+				4F91C00E1A0AF9F000FF6A65 /* SpaMKMapItem.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F91BFEA1A0AE15400FF6A65 /* ViewController.m in Sources */,
+				4F91C0091A0AE73D00FF6A65 /* Spa.m in Sources */,
+				4F91BFEA1A0AE15400FF6A65 /* RootViewController.m in Sources */,
 				4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */,
+				4F91C00F1A0AF9F000FF6A65 /* SpaMKMapItem.m in Sources */,
 				4F91BFE41A0AE15400FF6A65 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

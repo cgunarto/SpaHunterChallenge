@@ -1,15 +1,14 @@
 //
-//  ViewController.h
+//  SpaMKMapItem.h
 //  Spa Hunter Challenge
 //
 //  Created by CHRISTINA GUNARTO on 11/5/14.
 //  Copyright (c) 2014 Christina Gunarto. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SpaMKMapItem : MKMapItem
+@property int tag;
 
 @end
-
