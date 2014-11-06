@@ -16,6 +16,8 @@
 		4F91BFFE1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91BFFD1A0AE15500FF6A65 /* Spa_Hunter_ChallengeTests.m */; };
 		4F91C0091A0AE73D00FF6A65 /* Spa.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C0081A0AE73D00FF6A65 /* Spa.m */; };
 		4F91C00C1A0AE76600FF6A65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */; };
+		4F91C0121A0B39B400FF6A65 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C0111A0B39B400FF6A65 /* MapViewController.m */; };
+		4F91C0141A0B42F400FF6A65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91C0131A0B42F400FF6A65 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		4F91C0071A0AE73D00FF6A65 /* Spa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spa.h; sourceTree = "<group>"; };
 		4F91C0081A0AE73D00FF6A65 /* Spa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spa.m; sourceTree = "<group>"; };
 		4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4F91C0101A0B39B400FF6A65 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4F91C0111A0B39B400FF6A65 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4F91C0131A0B42F400FF6A65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F91C0141A0B42F400FF6A65 /* MapKit.framework in Frameworks */,
 				4F91C00C1A0AE76600FF6A65 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +75,7 @@
 		4F91BFD51A0AE15400FF6A65 = {
 			isa = PBXGroup;
 			children = (
+				4F91C0131A0B42F400FF6A65 /* MapKit.framework */,
 				4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */,
 				4F91BFE01A0AE15400FF6A65 /* Spa Hunter Challenge */,
 				4F91BFFA1A0AE15500FF6A65 /* Spa Hunter ChallengeTests */,
@@ -93,6 +100,8 @@
 				4F91C00A1A0AE74000FF6A65 /* Model */,
 				4F91BFE81A0AE15400FF6A65 /* RootViewController.h */,
 				4F91BFE91A0AE15400FF6A65 /* RootViewController.m */,
+				4F91C0101A0B39B400FF6A65 /* MapViewController.h */,
+				4F91C0111A0B39B400FF6A65 /* MapViewController.m */,
 				4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */,
 				4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */,
 				4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */,
@@ -238,6 +247,7 @@
 			files = (
 				4F91C0091A0AE73D00FF6A65 /* Spa.m in Sources */,
 				4F91BFEA1A0AE15400FF6A65 /* RootViewController.m in Sources */,
+				4F91C0121A0B39B400FF6A65 /* MapViewController.m in Sources */,
 				4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */,
 				4F91BFE41A0AE15400FF6A65 /* main.m in Sources */,
 			);

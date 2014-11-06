@@ -8,16 +8,21 @@
 
 #import "RootViewController.h"
 #import "Spa.h"
+#import "MapViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @import MapKit;
 
-@interface RootViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface RootViewController () <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate>
 @property CLLocationManager *manager;
 @property (weak, nonatomic) IBOutlet UIButton *findBlissButton;
 @property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
 @property (strong, nonatomic) NSMutableArray *spaArray;
 @property (strong, nonatomic) NSMutableArray *nearbySpaArray; //within 10KM
+@property (strong, nonatomic) NSArray *MKMapItemsArray;
+@property (weak, nonatomic) IBOutlet UILabel *minutesLabel;
+@property double walkingTime;
+@property double totalWalkingTime;
 
 @end
 
@@ -29,6 +34,8 @@
     self.manager = [[CLLocationManager alloc]init];
     [self.manager requestWhenInUseAuthorization];
     self.manager.delegate = self;
+    self.walkingTime = 0;
+    self.totalWalkingTime = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -64,6 +71,7 @@
 
 - (IBAction)onNearbyButtonPressed:(UIButton *)sender
 {
+    //show nearby locations less than 10km away
     self.spaArray = [self.nearbySpaArray mutableCopy];
     [self.resultsTableView reloadData];
 }
@@ -91,20 +99,20 @@
 
     self.spaArray = [@[]mutableCopy];
     self.nearbySpaArray = [@[]mutableCopy];
+    self.totalWalkingTime = 0;
 
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = @"Spa";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1,1));
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.5,0.5));
 
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
      {
-         NSArray *mapItemsArray = response.mapItems;
+         self.MKMapItemsArray = response.mapItems;
 
-         for (MKMapItem *mapItem in mapItemsArray)
+         for (MKMapItem *mapItem in self.MKMapItemsArray)
          {
              Spa *spa = [[Spa alloc] initWithMKMapItem:mapItem];
-             [self.spaArray addObject:spa];
 
              //finding distance of MapItem from self
              CLLocation *mapItemLocation = mapItem.placemark.location;
@@ -118,41 +126,54 @@
                  [self.nearbySpaArray addObject:spa];
              }
 
+             MKDirectionsRequest *request = [MKDirectionsRequest new];
+             request.source = [MKMapItem mapItemForCurrentLocation];
+             request.destination = mapItem;
+             request.transportType = MKDirectionsTransportTypeWalking;
+
+             MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
+
+             [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error)
+              {
+                  NSTimeInterval estimatedTravelTimeInSeconds = response.expectedTravelTime;
+                  self.walkingTime = estimatedTravelTimeInSeconds / (double)60;
+                  NSLog(@"Estimated travel time to %@ is %f minutes",spa.name, self.walkingTime);
+                  [self countTotalWalkingTime: self.walkingTime];
+              }];
+
+             [self.spaArray addObject:spa];
          }
 //         NSLog (@"You should go to %@, it is %.2f km away", mapItem.name, distanceInKm);
 //         [self getDirectionsTo:mapItem];
          [self.resultsTableView reloadData];
      }];
+
 }
 
-- (void)getDirectionsTo:(MKMapItem *)destinationItem
+- (void)countTotalWalkingTime:(double) travelTime
 {
-    MKDirectionsRequest *request = [MKDirectionsRequest new];
-    request.source = [MKMapItem mapItemForCurrentLocation];
-    request.destination = destinationItem;
-
-    MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
-
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, id error)
-     {
-         NSArray *routes = response.routes;
-         MKRoute *route = routes.firstObject;
-
-         int x = 1;
-         NSMutableString *directionsString = [NSMutableString string];
-
-         for (MKRouteStep *step in route.steps)
-         {
-             [directionsString appendFormat:@"%d: %@\n", x, step.instructions];
-             x++;
-
-             NSLog (@"%@", step.instructions);
-         }
-         self.textView.text = directionsString;
-     }];
+    self.totalWalkingTime = travelTime + self.totalWalkingTime + 50;
+    self.minutesLabel.text = [NSString stringWithFormat:@"%.2f",self.totalWalkingTime];
 }
 
-
+//- (void)getWalkingTimeTo:(MKMapItem *)destinationItem
+//{
+//    MKDirectionsRequest *request = [MKDirectionsRequest new];
+//    request.source = [MKMapItem mapItemForCurrentLocation];
+//    request.destination = destinationItem;
+//    request.transportType = MKDirectionsTransportTypeWalking;
+//
+//    MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
+//    self.walkingTime = 0;
+//
+//    [directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error)
+//    {
+//        NSTimeInterval estimatedTravelTimeInSeconds = response.expectedTravelTime;
+//       self.walkingTime = estimatedTravelTimeInSeconds / 60;
+//        NSLog(@"Direction to map item is %f", self.walkingTime);
+//    }];
+//
+//}
 
 
 #pragma mark Table View Custom Methods
@@ -167,6 +188,7 @@
     double distanceInKm = spa.distanceFromSelf;
     NSString *distanceString = [NSString stringWithFormat:@"%.2f km away", distanceInKm];
     cell.detailTextLabel.text = distanceString;
+    cell.imageView.image = [UIImage imageNamed:@"greenmark"];
 
     return cell;
 }
@@ -176,9 +198,10 @@
     return self.spaArray.count;
 }
 
-- (void) showFourNearestPlaces
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-
+    MapViewController *mapVC = (MapViewController *) [tabBarController.viewControllers objectAtIndex:1];
+    mapVC.MKMapItemsArray = self.MKMapItemsArray;
 }
 
 

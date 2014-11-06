@@ -19,6 +19,7 @@
 @property double latitude;
 @property double longitude;
 @property double distanceFromSelf;
+@property double walkingTime;
 
 - (instancetype) initWithMKMapItem: (MKMapItem *)mapItem;
 
