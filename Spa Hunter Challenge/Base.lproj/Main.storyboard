@@ -122,11 +122,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-aJ-E9T">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-aJ-E9T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <connections>
+                                    <outlet property="delegate" destination="y59-k0-Jck" id="M5W-tB-WdC"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nBc-tI-NJw" firstAttribute="top" secondItem="pz0-aJ-E9T" secondAttribute="bottom" id="GAp-dW-vBU"/>
+                            <constraint firstItem="pz0-aJ-E9T" firstAttribute="leading" secondItem="rZw-H5-6XI" secondAttribute="leadingMargin" constant="-16" id="Yzh-SI-Cau"/>
+                            <constraint firstItem="pz0-aJ-E9T" firstAttribute="top" secondItem="rZw-H5-6XI" secondAttribute="topMargin" id="Zpf-gE-cp4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pz0-aJ-E9T" secondAttribute="trailing" constant="-16" id="q93-Xo-UdE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MAP" selectedImage="leaf-50" id="xvl-l8-C3x"/>
                     <connections>
