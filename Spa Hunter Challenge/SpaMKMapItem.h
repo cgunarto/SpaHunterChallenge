@@ -10,5 +10,7 @@
 
 @interface SpaMKMapItem : MKMapItem
 @property int tag;
+@property double distanceFromUserLocation;
+
 
 @end

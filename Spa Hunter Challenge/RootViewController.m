@@ -8,7 +8,6 @@
 
 #import "RootViewController.h"
 #import "Spa.h"
-#import "SpaMKMapItem.h"
 #import <CoreLocation/CoreLocation.h>
 
 @import MapKit;
@@ -17,7 +16,8 @@
 @property CLLocationManager *manager;
 @property (weak, nonatomic) IBOutlet UIButton *findBlissButton;
 @property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
-@property (strong, nonatomic) NSArray *arrayOfSpas;
+@property (strong, nonatomic) NSMutableArray *spaArray;
+@property (strong, nonatomic) NSMutableArray *nearbySpaArray; //within 10KM
 
 @end
 
@@ -29,6 +29,11 @@
     self.manager = [[CLLocationManager alloc]init];
     [self.manager requestWhenInUseAuthorization];
     self.manager.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.resultsTableView reloadData];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -51,31 +56,16 @@
     }
 }
 
-- (void)findSpaNear:(CLLocation *)location
-{
-    MKLocalSearchRequest *request = [MKLocalSearchRequest new];
-    request.naturalLanguageQuery = @"spa";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1,1));
-
-    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
-     {
-         NSArray *mapItems = response.mapItems;
-         MKMapItem *mapItem = mapItems.firstObject;
-
-         CLLocation *mapItemLocation = mapItem.placemark.location;
-         CLLocationDistance distanceFromSelf = [mapItemLocation distanceFromLocation: self.manager.location];
-         double distanceInKm = distanceFromSelf / 1000;
-
-         NSLog (@"You should go to %@, it is %.2f km away", mapItem.name, distanceInKm);
-//         [self getDirectionsTo:mapItem];
-     }];
-}
-
 - (IBAction)onBlissButtonPressed:(UIButton *)sender
 {
     NSLog(@"Location Found. START: %s",__PRETTY_FUNCTION__);
     [self.manager startUpdatingLocation];
+}
+
+- (IBAction)onNearbyButtonPressed:(UIButton *)sender
+{
+    self.spaArray = [self.nearbySpaArray mutableCopy];
+    [self.resultsTableView reloadData];
 }
 
 - (void)reverseGeoCode:(CLLocation *)location
@@ -91,22 +81,105 @@
                               placemark.locality];
          NSLog(@"Found you! %@",address);
          [self findSpaNear:placemark.location];
-         
+
      }];
 }
+
+
+- (void)findSpaNear:(CLLocation *)location
+{
+
+    self.spaArray = [@[]mutableCopy];
+    self.nearbySpaArray = [@[]mutableCopy];
+
+    MKLocalSearchRequest *request = [MKLocalSearchRequest new];
+    request.naturalLanguageQuery = @"Spa";
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1,1));
+
+    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
+     {
+         NSArray *mapItemsArray = response.mapItems;
+
+         for (MKMapItem *mapItem in mapItemsArray)
+         {
+             Spa *spa = [[Spa alloc] initWithMKMapItem:mapItem];
+             [self.spaArray addObject:spa];
+
+             //finding distance of MapItem from self
+             CLLocation *mapItemLocation = mapItem.placemark.location;
+             CLLocationDistance distanceFromSelf = [mapItemLocation distanceFromLocation: self.manager.location];
+             double distanceInKm = distanceFromSelf / 1000;
+
+             spa.distanceFromSelf = distanceInKm;
+
+             if (spa.distanceFromSelf < 10)
+             {
+                 [self.nearbySpaArray addObject:spa];
+             }
+
+         }
+//         NSLog (@"You should go to %@, it is %.2f km away", mapItem.name, distanceInKm);
+//         [self getDirectionsTo:mapItem];
+         [self.resultsTableView reloadData];
+     }];
+}
+
+- (void)getDirectionsTo:(MKMapItem *)destinationItem
+{
+    MKDirectionsRequest *request = [MKDirectionsRequest new];
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    request.destination = destinationItem;
+
+    MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
+
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, id error)
+     {
+         NSArray *routes = response.routes;
+         MKRoute *route = routes.firstObject;
+
+         int x = 1;
+         NSMutableString *directionsString = [NSMutableString string];
+
+         for (MKRouteStep *step in route.steps)
+         {
+             [directionsString appendFormat:@"%d: %@\n", x, step.instructions];
+             x++;
+
+             NSLog (@"%@", step.instructions);
+         }
+         self.textView.text = directionsString;
+     }];
+}
+
+
+
 
 #pragma mark Table View Custom Methods
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"resultCell" forIndexPath:indexPath];
+    Spa *spa = self.spaArray[indexPath.row];
+    cell.textLabel.text = spa.name;
+
+    //setting the distance
+    double distanceInKm = spa.distanceFromSelf;
+    NSString *distanceString = [NSString stringWithFormat:@"%.2f km away", distanceInKm];
+    cell.detailTextLabel.text = distanceString;
+
+    return cell;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.spaArray.count;
 }
 
+- (void) showFourNearestPlaces
+{
+
+}
 
 
 
