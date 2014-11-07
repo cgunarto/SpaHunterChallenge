@@ -105,7 +105,7 @@
 
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = @"Spa";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.5,0.5));
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.1,0.1));
 
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
