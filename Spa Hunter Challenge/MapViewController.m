@@ -45,6 +45,19 @@
     }
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    //MKPinAnnotationView instead of MKAnnotation -- be careful
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView =[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    pin.pinColor = MKPinAnnotationColorPurple;
+    pin.image = [UIImage imageNamed:@"greenmark"];
+    return pin;
+}
+
+
+
 - (void)setInitialViewToSelfLocation
 {
     MKCoordinateSpan coordinateSpan;
