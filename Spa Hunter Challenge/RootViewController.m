@@ -34,6 +34,7 @@
     self.manager = [[CLLocationManager alloc]init];
     [self.manager requestWhenInUseAuthorization];
     self.manager.delegate = self;
+    self.tabBarController.delegate = self;
     self.walkingTime = 0;
     self.totalWalkingTime = 0;
 }
@@ -99,6 +100,7 @@
 
     self.spaArray = [@[]mutableCopy];
     self.nearbySpaArray = [@[]mutableCopy];
+
     self.totalWalkingTime = 0;
 
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
@@ -200,8 +202,11 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    MapViewController *mapVC = (MapViewController *) [tabBarController.viewControllers objectAtIndex:1];
+    //   MapViewController *mapVC = (MapViewController *) [tabBarController.viewControllers objectAtIndex:1];
+    MapViewController *mapVC = (MapViewController *)viewController;
     mapVC.MKMapItemsArray = self.MKMapItemsArray;
+    mapVC.selfCoord = self.manager.location.coordinate;
+    NSLog(@"selected %lu",(unsigned long)tabBarController.selectedIndex);
 }
 
 

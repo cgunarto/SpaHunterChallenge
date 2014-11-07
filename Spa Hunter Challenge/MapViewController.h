@@ -13,6 +13,8 @@
 
 @interface MapViewController : UIViewController
 @property (strong, nonatomic) NSArray *MKMapItemsArray;
+@property CLLocationCoordinate2D selfCoord;
+
 
 
 

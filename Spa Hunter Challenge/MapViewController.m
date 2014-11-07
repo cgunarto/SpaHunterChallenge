@@ -10,6 +10,10 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#define kLatitudeDelta 0.1
+#define kLongitudeDelta 0.1
+#define kLatitudeDeltaAnnotation 0.01
+#define kLongitudeDeltaAnnotation 0.01
 
 @interface MapViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -21,10 +25,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self addAnnotationWithMKMapItemArray:self.MKMapItemsArray];
 }
 
-- (void)addAnnotationWithMKMapItemArray: (NSMutableArray *)MKMapItemArray
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self addAnnotationWithMKMapItemArray:self.MKMapItemsArray];
+    [self setInitialViewToSelfLocation];
+}
+
+- (void)addAnnotationWithMKMapItemArray: (NSArray *)MKMapItemArray
 {
     for (MKMapItem *mapItem in MKMapItemArray)
     {
@@ -35,19 +45,17 @@
     }
 }
 
+- (void)setInitialViewToSelfLocation
+{
+    MKCoordinateSpan coordinateSpan;
+    coordinateSpan.latitudeDelta = kLatitudeDelta;
+    coordinateSpan.longitudeDelta = kLongitudeDelta;
+
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.selfCoord, coordinateSpan);
+    [self.mapView setRegion:region animated:YES];
+}
 
 
 
-//- (void)setInitialViewToChicago
-//{
-//    //set the center of the map to Madison & Clinton
-//    CLLocationCoordinate2D chicago = CLLocationCoordinate2DMake(klatitudeCenter, klongitudeCenter);
-//    MKCoordinateSpan coordinateSpan;
-//    coordinateSpan.latitudeDelta = klatitudeDelta;
-//    coordinateSpan.longitudeDelta = klongitudeDelta;
-//
-//    MKCoordinateRegion region = MKCoordinateRegionMake(chicago, coordinateSpan);
-//    [self.mapView setRegion:region animated:YES];
-//}
 
 @end
