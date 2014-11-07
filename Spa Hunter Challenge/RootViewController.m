@@ -205,7 +205,8 @@
     //   MapViewController *mapVC = (MapViewController *) [tabBarController.viewControllers objectAtIndex:1];
     MapViewController *mapVC = (MapViewController *)viewController;
     mapVC.MKMapItemsArray = self.MKMapItemsArray;
-    mapVC.selfCoord = self.manager.location.coordinate;
+//    mapVC.selfCoord = self.manager.location.coordinate;
+    mapVC.selfLocation  = self.manager.location;
     NSLog(@"selected %lu",(unsigned long)tabBarController.selectedIndex);
 }
 

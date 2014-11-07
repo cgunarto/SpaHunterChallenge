@@ -60,11 +60,12 @@
 
 - (void)setInitialViewToSelfLocation
 {
+    CLLocationCoordinate2D center = self.selfLocation.coordinate;
     MKCoordinateSpan coordinateSpan;
     coordinateSpan.latitudeDelta = kLatitudeDelta;
     coordinateSpan.longitudeDelta = kLongitudeDelta;
 
-    MKCoordinateRegion region = MKCoordinateRegionMake(self.selfCoord, coordinateSpan);
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, coordinateSpan);
     [self.mapView setRegion:region animated:YES];
 }
 

@@ -140,11 +140,50 @@
                     <tabBarItem key="tabBarItem" title="MAP" selectedImage="leaf-50" id="xvl-l8-C3x"/>
                     <connections>
                         <outlet property="mapView" destination="pz0-aJ-E9T" id="vFm-8m-cFO"/>
+                        <segue destination="qhe-Wm-BH5" kind="push" identifier="segueToDirection" id="E0A-RB-tBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBx-JN-U3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="1107"/>
+        </scene>
+        <!--Direction View Controller-->
+        <scene sceneID="91J-1Q-2bE">
+            <objects>
+                <viewController id="qhe-Wm-BH5" customClass="DirectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1MO-pJ-LaG"/>
+                        <viewControllerLayoutGuide type="bottom" id="v0g-s0-PX6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Psr-dy-L3q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-4e-Rlp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="286" id="jVv-15-MzZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="qhe-Wm-BH5" id="ha2-wR-FUc"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dBb-4e-Rlp" secondAttribute="trailing" constant="-16" id="0zX-e8-Wc0"/>
+                            <constraint firstItem="dBb-4e-Rlp" firstAttribute="leading" secondItem="Psr-dy-L3q" secondAttribute="leadingMargin" constant="-16" id="I3l-4o-6KK"/>
+                            <constraint firstItem="dBb-4e-Rlp" firstAttribute="top" secondItem="Psr-dy-L3q" secondAttribute="topMargin" id="zb9-Tc-HFY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9hd-gn-i2y"/>
+                    <connections>
+                        <outlet property="mapView" destination="dBb-4e-Rlp" id="Poq-Iw-fVo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGF-q1-MaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="1107"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ln6-wO-2KY">

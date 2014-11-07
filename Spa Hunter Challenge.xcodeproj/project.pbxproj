@@ -18,6 +18,7 @@
 		4F91C00C1A0AE76600FF6A65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91C00B1A0AE76600FF6A65 /* CoreLocation.framework */; };
 		4F91C0121A0B39B400FF6A65 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C0111A0B39B400FF6A65 /* MapViewController.m */; };
 		4F91C0141A0B42F400FF6A65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91C0131A0B42F400FF6A65 /* MapKit.framework */; };
+		4F91C0811A0C550D00FF6A65 /* DirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C0801A0C550D00FF6A65 /* DirectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		4F91C0101A0B39B400FF6A65 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4F91C0111A0B39B400FF6A65 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4F91C0131A0B42F400FF6A65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4F91C07F1A0C550D00FF6A65 /* DirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionViewController.h; sourceTree = "<group>"; };
+		4F91C0801A0C550D00FF6A65 /* DirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				4F91BFE91A0AE15400FF6A65 /* RootViewController.m */,
 				4F91C0101A0B39B400FF6A65 /* MapViewController.h */,
 				4F91C0111A0B39B400FF6A65 /* MapViewController.m */,
+				4F91C07F1A0C550D00FF6A65 /* DirectionViewController.h */,
+				4F91C0801A0C550D00FF6A65 /* DirectionViewController.m */,
 				4F91BFEB1A0AE15400FF6A65 /* Main.storyboard */,
 				4F91BFEE1A0AE15400FF6A65 /* Images.xcassets */,
 				4F91BFF01A0AE15400FF6A65 /* LaunchScreen.xib */,
@@ -249,6 +254,7 @@
 				4F91BFEA1A0AE15400FF6A65 /* RootViewController.m in Sources */,
 				4F91C0121A0B39B400FF6A65 /* MapViewController.m in Sources */,
 				4F91BFE71A0AE15400FF6A65 /* AppDelegate.m in Sources */,
+				4F91C0811A0C550D00FF6A65 /* DirectionViewController.m in Sources */,
 				4F91BFE41A0AE15400FF6A65 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +446,7 @@
 				4F91C0031A0AE15500FF6A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F91C0041A0AE15500FF6A65 /* Build configuration list for PBXNativeTarget "Spa Hunter ChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +455,7 @@
 				4F91C0061A0AE15500FF6A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
